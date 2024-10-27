@@ -1,20 +1,15 @@
 /* Base Styling */
-main {
-  background-color: #13161b;
-  margin: 0;
-  padding: 0;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+body, main {
   background-color: #13161b;
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 /* Text Container Section */
@@ -24,30 +19,22 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: clamp(50vh, 60vh, 70vh); /* Responsive height */
-  padding: 20px; /* Add padding for smaller screens */
-  background-color: #13161b;
+  height: clamp(40vh, 50vh, 60vh);
+  padding: 10px 20px;
+  gap: 15px;
 }
 
-/* Main changing text */
 #changing-text {
-  font-size: clamp(3rem, 8vw, 10rem); /* Responsive font size */
+  font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: 600;
   color: #ffffff;
-  margin-top: 20px; /* Adjust margin to scale across screens */
+  margin-top: 10px;
+  transition: color 0.5s;
 }
 
-/* Additional text below changing text */
-.additional-text {
-  font-size: clamp(1.5rem, 2.9vw, 3.5rem); /* Responsive font size */
-  font-weight: bold;
-  max-width: 70vw; /* Limits width on wider screens */
-  margin-top: 15px; /* Adjusted for consistent spacing */
-  color: #ffffff;
+#changing-text:hover {
+  color: #00aced;
 }
-
-
-
 /* Fade Effect */
 .fade {
   opacity: 0;
@@ -56,48 +43,82 @@ body {
 
 @keyframes fadeEffect {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
+}
+.additional-text {
+  font-size: clamp(1.2rem, 2.5vw, 2.8rem);
+  font-weight: bold;
+  max-width: 80vw;
+  margin-top: 15px;
+  color: #ffffff;
+}
+
+.highlight {
+  color: aqua;
+  transition: color 0.5s;
+}
+
+.highlight:hover {
+  color: #ff6347;
 }
 
 /* Projects Section */
 .project-section {
-  padding: 40px 0;
+  padding: 40px 5px 0 5px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-row {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
 }
 
 .project {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #1d2027;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  transition: transform 0.2s ease;
-  margin: 10px;
-  width: calc(100% / 3 - 20px); /* Adjust width for 3-column layout */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(33.33% - 20px);
+  max-width: 300px;
 }
 
 .project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .project-photo {
+  width: 100%;
   height: 200px;
   object-fit: cover;
-  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.project:hover .project-photo {
+  transform: scale(1.05);
 }
 
 .project-name {
   font-weight: bold;
+  font-size: 1.2rem;
   color: #007bff;
-  padding: 10px 0;
-  background-color: #f9f9f9;
+  padding: 15px 0;
   text-align: center;
+  background-color: #1d2027;
+  transition: color 0.3s;
+}
+
+.project:hover .project-name {
+  color: #00aced;
 }
 
 /* Social Media Icons */
@@ -109,8 +130,8 @@ body {
 
 .social-icons a {
   color: #ffffff;
-  margin: 0 10px;
-  font-size: 2rem;
+  margin: 0 15px;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
   transition: color 0.3s;
 }
 
@@ -118,38 +139,39 @@ body {
   color: #00aced;
 }
 
-/* Projects Section */
-.project {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.2s ease;
-  margin: 10px;
-  width: calc(33.33% - 20px); /* 3 columns for larger screens */
-  min-width: 500px; /* Set minimum width to 500px */
-}
-
 /* Responsive Layout Adjustments */
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .project {
-      width: calc(25% - 20px); /* Wider layout with 4 columns */
-      min-width: 500px; /* Minimum width remains 500px */
+    width: calc(45% - 20px); /* Wider layout for laptop */
   }
 }
 
 @media (max-width: 992px) {
   .project {
-      width: calc(50% - 20px); /* 2 columns on medium screens */
-      min-width: 500px; /* Minimum width remains 500px */
+    width: calc(50% - 20px); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .text-container {
+    padding: 20px;
+  }
+  #changing-text {
+    font-size: clamp(2rem, 7vw, 5rem);
+  }
+  .additional-text {
+    font-size: clamp(1rem, 2vw, 1.8rem);
   }
 }
 
 @media (max-width: 576px) {
   .project {
-      width: calc(100% - 20px); /* Full-width for mobile screens */
-      min-width: auto; /* Allow resizing below 500px on small screens */
+    width: calc(100% - 20px);
+  }
+  #changing-text {
+    font-size: clamp(1.8rem, 6vw, 4rem);
+  }
+  .additional-text {
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
   }
 }
-
-
