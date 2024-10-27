@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "edge",
+      "request": "launch",
+      "name": "localhost (Edge)",
+      "url": "http://localhost:42600 ", // Changed the port here
+      "webRoot": "${workspaceFolder}",
+      "port": 42600 // Changed this to a different port
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:42600 ", // Changed the port here
+      "webRoot": "${workspaceFolder}",
+      "port": 42600 // Changed this to a different port
+    }
+  ]
+}

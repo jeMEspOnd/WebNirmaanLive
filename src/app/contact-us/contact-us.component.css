@@ -1,0 +1,117 @@
+/* Base Styles for Contact Us Page */
+main {
+  background-color: #13161b; /* Main background color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Text Container */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #13161b;
+  height: 60vh;
+  overflow: hidden;
+}
+
+/* Changing Text */
+#changing-text {
+  font-size: 6rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 40px 0;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 2s ease forwards;
+}
+
+/* Additional Text */
+.additional-text {
+  font-size: 2rem;
+  max-width: 80vw;
+  font-weight: bold;
+  margin-top: 20px;
+  color: aqua;
+}
+
+/* Keyframes for Slide In */
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+/* Contact Section Styles */
+.contact-details {
+  background-color: #fff; /* White background for contact details */
+  padding: 20px; /* Inner padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center; /* Center text */
+  margin-bottom: 40px; /* Space below contact details */
+}
+
+/* Heading Styles */
+.contact-heading {
+  font-size: 2rem; /* Heading size */
+  color: #333; /* Dark text */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+/* Description Styles */
+.contact-description {
+  font-size: 1rem; /* Description size */
+  color: #777; /* Light grey for description */
+  margin: 5px 0; /* Space between lines */
+}
+
+/* Contact Form Styles */
+.contact-form {
+  background-color: #fff; /* White background for form */
+  padding: 20px; /* Inner padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 15px; /* Space between form fields */
+}
+
+/* Label Styles */
+label {
+  display: block; /* Block display */
+  margin-bottom: 5px; /* Space below label */
+  color: #333; /* Dark text for labels */
+}
+
+/* Input Fields and Textarea */
+input, textarea {
+  width: 100%; /* Full width inputs */
+  padding: 10px; /* Padding */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+}
+
+/* Button Styles */
+button {
+  background-color: #007bff; /* Blue button */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 15px; /* Padding */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

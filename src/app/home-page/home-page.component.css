@@ -1,0 +1,155 @@
+/* Base Styling */
+main {
+  background-color: #13161b;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #13161b;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Text Container Section */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: clamp(50vh, 60vh, 70vh); /* Responsive height */
+  padding: 20px; /* Add padding for smaller screens */
+  background-color: #13161b;
+}
+
+/* Main changing text */
+#changing-text {
+  font-size: clamp(3rem, 8vw, 10rem); /* Responsive font size */
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 20px; /* Adjust margin to scale across screens */
+}
+
+/* Additional text below changing text */
+.additional-text {
+  font-size: clamp(1.5rem, 2.9vw, 3.5rem); /* Responsive font size */
+  font-weight: bold;
+  max-width: 70vw; /* Limits width on wider screens */
+  margin-top: 15px; /* Adjusted for consistent spacing */
+  color: #ffffff;
+}
+
+
+
+/* Fade Effect */
+.fade {
+  opacity: 0;
+  animation: fadeEffect 2s ease forwards;
+}
+
+@keyframes fadeEffect {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Projects Section */
+.project-section {
+  padding: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  margin: 10px;
+  width: calc(100% / 3 - 20px); /* Adjust width for 3-column layout */
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-photo {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-name {
+  font-weight: bold;
+  color: #007bff;
+  padding: 10px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 2rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00aced;
+}
+
+/* Projects Section */
+.project {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  margin: 10px;
+  width: calc(33.33% - 20px); /* 3 columns for larger screens */
+  min-width: 500px; /* Set minimum width to 500px */
+}
+
+/* Responsive Layout Adjustments */
+@media (min-width: 1200px) {
+  .project {
+      width: calc(25% - 20px); /* Wider layout with 4 columns */
+      min-width: 500px; /* Minimum width remains 500px */
+  }
+}
+
+@media (max-width: 992px) {
+  .project {
+      width: calc(50% - 20px); /* 2 columns on medium screens */
+      min-width: 500px; /* Minimum width remains 500px */
+  }
+}
+
+@media (max-width: 576px) {
+  .project {
+      width: calc(100% - 20px); /* Full-width for mobile screens */
+      min-width: auto; /* Allow resizing below 500px on small screens */
+  }
+}
+
+
