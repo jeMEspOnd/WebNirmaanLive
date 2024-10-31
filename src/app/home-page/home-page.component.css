@@ -20,21 +20,23 @@ body, main {
   justify-content: center;
   text-align: center;
   height: clamp(40vh, 50vh, 60vh);
-  padding: 10px 20px;
+  padding: 20px;
   gap: 15px;
 }
 
 #changing-text {
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 80vw, 10rem);
   font-weight: 600;
   color: #ffffff;
   margin-top: 10px;
-  transition: color 0.5s;
+  transition: color 0.5s, transform 0.3s;
 }
 
 #changing-text:hover {
   color: #00aced;
+  transform: scale(1.05);
 }
+
 /* Fade Effect */
 .fade {
   opacity: 0;
@@ -49,26 +51,29 @@ body, main {
     opacity: 1;
   }
 }
+
 .additional-text {
-  font-size: clamp(1.2rem, 2.5vw, 2.8rem);
+  font-size: clamp(1.2rem, 2.5vw, 2.2rem);
   font-weight: bold;
   max-width: 80vw;
   margin-top: 15px;
   color: #ffffff;
+  transition: color 0.3s;
 }
 
 .highlight {
   color: aqua;
-  transition: color 0.5s;
+  transition: color 0.5s, transform 0.3s;
 }
 
 .highlight:hover {
   color: #ff6347;
+  transform: scale(1.1);
 }
 
 /* Projects Section */
 .project-section {
-  padding: 40px 5px 0 5px;
+  padding: 40px 10px 0 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -88,7 +93,7 @@ body, main {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: calc(33.33% - 20px);
-  max-width: 300px;
+  max-width: 280px;
 }
 
 .project:hover {
@@ -142,7 +147,7 @@ body, main {
 /* Responsive Layout Adjustments */
 @media (max-width: 1200px) {
   .project {
-    width: calc(45% - 20px); /* Wider layout for laptop */
+    width: calc(45% - 20px); /* 2 columns layout for laptops */
   }
 }
 
@@ -150,28 +155,37 @@ body, main {
   .project {
     width: calc(50% - 20px); /* 2 columns on medium screens */
   }
-}
-
-@media (max-width: 768px) {
-  .text-container {
-    padding: 20px;
-  }
   #changing-text {
-    font-size: clamp(2rem, 7vw, 5rem);
+    font-size: clamp(2rem, 10vw, 6.2rem);
   }
   .additional-text {
     font-size: clamp(1rem, 2vw, 1.8rem);
   }
 }
 
-@media (max-width: 576px) {
-  .project {
-    width: calc(100% - 20px);
+@media (max-width: 768px) {
+  .text-container {
+    padding: 15px;
   }
   #changing-text {
     font-size: clamp(1.8rem, 6vw, 4rem);
   }
   .additional-text {
     font-size: clamp(1rem, 1.8vw, 1.5rem);
+  }
+  .project {
+    width: calc(50% - 10px); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .project {
+    width: calc(100% - 20px); /* Single column on small screens */
+  }
+  #changing-text {
+    font-size: clamp(2.5rem, 8vw, 10rem);
+  }
+  .additional-text {
+    font-size: clamp(0.9rem, 1.6vw, 1.3rem);
   }
 }
