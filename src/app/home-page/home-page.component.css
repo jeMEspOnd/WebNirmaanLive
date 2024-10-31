@@ -1,32 +1,37 @@
-/* Base Styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, main {
+/* Base Styles */
+main {
   background-color: #13161b;
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
 
-/* Text Container Section */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Common Styles */
+section {
+  padding: 40px 20px;
+}
+
+/* Text Container */
 .text-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: clamp(40vh, 50vh, 60vh);
-  padding: 20px;
-  gap: 15px;
+  height: 60vh;
+  overflow: hidden;
+  color: #ffffff;
 }
 
 #changing-text {
-  font-size: clamp(2.5rem, 80vw, 10rem);
-  font-weight: 600;
+  font-size: clamp(2.5rem, 10vw, 9rem);
+  font-weight: 700;
   color: #ffffff;
   margin-top: 10px;
   transition: color 0.5s, transform 0.3s;
@@ -40,16 +45,13 @@ body, main {
 /* Fade Effect */
 .fade {
   opacity: 0;
+  transform: translateY(20%);
   animation: fadeEffect 2s ease forwards;
 }
 
 @keyframes fadeEffect {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; transform: translateY(20%); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .additional-text {
@@ -62,7 +64,7 @@ body, main {
 }
 
 .highlight {
-  color: aqua;
+  color: #00aced;
   transition: color 0.5s, transform 0.3s;
 }
 
@@ -73,7 +75,7 @@ body, main {
 
 /* Projects Section */
 .project-section {
-  padding: 40px 10px 0 10px;
+  padding: 40px 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -92,13 +94,14 @@ body, main {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(33.33% - 20px);
+  width: calc(25% - 20px);
   max-width: 280px;
+  cursor: pointer;
 }
 
 .project:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .project-photo {
@@ -109,13 +112,13 @@ body, main {
 }
 
 .project:hover .project-photo {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .project-name {
   font-weight: bold;
   font-size: 1.2rem;
-  color: #007bff;
+  color: #00aced;
   padding: 15px 0;
   text-align: center;
   background-color: #1d2027;
@@ -123,7 +126,7 @@ body, main {
 }
 
 .project:hover .project-name {
-  color: #00aced;
+  color: #ff6347;
 }
 
 /* Social Media Icons */
@@ -147,19 +150,16 @@ body, main {
 /* Responsive Layout Adjustments */
 @media (max-width: 1200px) {
   .project {
-    width: calc(45% - 20px); /* 2 columns layout for laptops */
+    width: calc(45% - 20px); /* 2 columns layout for medium laptops */
   }
 }
 
 @media (max-width: 992px) {
   .project {
-    width: calc(50% - 20px); /* 2 columns on medium screens */
+    width: calc(50% - 20px); /* 2 columns layout for tablets */
   }
   #changing-text {
-    font-size: clamp(2rem, 10vw, 6.2rem);
-  }
-  .additional-text {
-    font-size: clamp(1rem, 2vw, 1.8rem);
+    font-size: clamp(5.7rem, 10vw, 5rem);
   }
 }
 
@@ -168,13 +168,13 @@ body, main {
     padding: 15px;
   }
   #changing-text {
-    font-size: clamp(1.8rem, 6vw, 4rem);
+    font-size: clamp(5.5rem, 8vw, 4rem);
   }
   .additional-text {
-    font-size: clamp(1rem, 1.8vw, 1.5rem);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
   }
   .project {
-    width: calc(50% - 10px); /* 2 columns on tablets */
+    width: calc(50% - 10px); /* 2 columns for tablets in portrait mode */
   }
 }
 
@@ -183,9 +183,9 @@ body, main {
     width: calc(100% - 20px); /* Single column on small screens */
   }
   #changing-text {
-    font-size: clamp(2.5rem, 8vw, 10rem);
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
   }
   .additional-text {
-    font-size: clamp(0.9rem, 1.6vw, 1.3rem);
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
   }
 }

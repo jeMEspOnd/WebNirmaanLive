@@ -1,8 +1,23 @@
-/* Base Styles for Contact Us Page */
+/* Base Styles */
 main {
-  background-color: #13161b; /* Main background color */
+  background-color: #13161b;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #13161b;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Common Styles */
+section {
+  padding: 40px;
 }
 
 /* Text Container */
