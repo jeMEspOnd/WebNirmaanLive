@@ -159,7 +159,7 @@ section {
     width: calc(50% - 20px); /* 2 columns layout for tablets */
   }
   #changing-text {
-    font-size: clamp(5.7rem, 10vw, 5rem);
+    font-size: clamp(rem, 10vw, 5rem);
   }
 }
 
