@@ -2,12 +2,13 @@
     <!-- Text Container Section -->
     <section class="text-container">
         <div>
-            <span id="changing-text" class="fade">Welcome to Our Creative World</span>
+          <span id="changing-text" [@fadeAnimation]="animationState">{{ phrases[index] }}</span>
         </div>
         <div class="additional-text">
-            Transforming Ideas into Impactful Solutions - Your Partner in Digital <span class="highlight">Transformation</span>
+          Transforming Ideas into Impactful Solutions - Your Partner in Digital <span class="highlight">Transformation</span>
         </div>
-    </section>
+      </section>
+      
 
     <!-- Project Section -->
     <section class="project-section">

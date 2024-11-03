@@ -195,3 +195,31 @@ input:focus, textarea:focus {
     font-size: 0.9rem;
   }
 }
+
+/* styles.css or global.css */
+.custom-snackbar {
+  position: fixed;
+  left: 50%;
+  top: 20px; /* Position near the top */
+  transform: translateX(-50%); /* Center it horizontally */
+  z-index: 1000;
+  margin: 0; /* Reset margin */
+  padding: 16px;
+  color: white;
+  border-radius: 4px;
+  width: 300px; /* Fixed width for consistent layout */
+  text-align: center; /* Center text */
+}
+
+.custom-snackbar.success {
+  background-color: green;
+}
+
+.custom-snackbar.error {
+  background-color: red;
+}
+
+.custom-snackbar.warning {
+  background-color: orange;
+}
+

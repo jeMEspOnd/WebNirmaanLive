@@ -1,9 +1,18 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
+  animations: [
+    trigger('fadeAnimation', [
+      state('visible', style({ opacity: 1 })),
+      state('hidden', style({ opacity: 0 })),
+      transition('hidden => visible', [animate('0.5s ease-in')]),
+      transition('visible => hidden', [animate('0.5s ease-out')]),
+    ]),
+  ]
 })
 export class HomePageComponent implements OnInit, OnDestroy {
   phrases: string[] = [
@@ -17,30 +26,28 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   index: number = 0;
   intervalId: any;
+  animationState = 'visible';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.changeText(); // Initial call to set the first phrase
-    this.intervalId = setInterval(() => this.changeText(), 2000); // Change text every 3 seconds
+    this.changePhraseWithAnimation(); // Initialize first phrase with animation
+    this.intervalId = setInterval(() => this.changePhraseWithAnimation(), 3000); // Change text every 3 seconds
   }
 
   ngOnDestroy(): void {
     if (this.intervalId) {
-      clearInterval(this.intervalId); // Clear the interval on component destruction
+      clearInterval(this.intervalId);
     }
   }
 
-  changeText(): void {
-    const textElement = document.getElementById('changing-text');
-    if (textElement) {
-      textElement.textContent = this.phrases[this.index];
-      textElement.classList.remove('fade'); // Reset fade effect
-      void textElement.offsetWidth; // Trigger reflow for restart animation
-      textElement.classList.add('fade');
-
-      // Move to the next phrase or loop back to the start
+  changePhraseWithAnimation(): void {
+    // Start fade-out
+    this.animationState = 'hidden';
+    setTimeout(() => {
+      // Change the text after fade-out
       this.index = (this.index + 1) % this.phrases.length;
-    }
+      this.animationState = 'visible'; // Fade-in with new text
+    }, 500); // Match fade-out duration
   }
 }

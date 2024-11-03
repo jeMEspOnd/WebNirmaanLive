@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/* Override default styles */
+::ng-deep .mat-snack-bar-container {
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Custom Snackbar Styling */
+.custom-snackbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 16px;
+  color: white;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-snackbar.success {
+  background-color: rgba(0, 128, 0, 0.8); /* Green */
+}
+
+.custom-snackbar.error {
+  background-color: rgba(255, 0, 0, 0.8); /* Red */
+}
