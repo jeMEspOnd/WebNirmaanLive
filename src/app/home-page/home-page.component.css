@@ -1,4 +1,11 @@
-/* Base Styles */
+/* Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
 main {
   background-color: #13161b;
   color: #ffffff;
@@ -42,6 +49,7 @@ section {
   transform: scale(1.05);
 }
 
+
 /* Fade Effect */
 .fade {
   opacity: 0;
@@ -50,9 +58,15 @@ section {
 }
 
 @keyframes fadeEffect {
-  0% { opacity: 0; transform: translateY(20%); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 
 .additional-text {
   font-size: clamp(1.2rem, 2.5vw, 2.2rem);
@@ -94,9 +108,10 @@ section {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(25% - 20px);
-  max-width: 280px;
-  cursor: pointer;
+  /* width: calc(33.33% - 20px);
+  max-width: 300px; */
+  width: 22vw;
+  max-width: 100%;
 }
 
 .project:hover {
@@ -150,16 +165,15 @@ section {
 /* Responsive Layout Adjustments */
 @media (max-width: 1200px) {
   .project {
-    width: calc(45% - 20px); /* 2 columns layout for medium laptops */
+    width: calc(45% - 20px);
+    /* Wider layout for laptop */
   }
 }
 
 @media (max-width: 992px) {
   .project {
-    width: calc(50% - 20px); /* 2 columns layout for tablets */
-  }
-  #changing-text {
-    font-size: clamp(rem, 10vw, 5rem);
+    width: calc(50% - 20px);
+    /* 2 columns on medium screens */
   }
 }
 
@@ -167,24 +181,25 @@ section {
   .text-container {
     padding: 15px;
   }
+
   #changing-text {
     font-size: clamp(5.5rem, 8vw, 4rem);
   }
+
   .additional-text {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-  }
-  .project {
-    width: calc(50% - 10px); /* 2 columns for tablets in portrait mode */
+    font-size: clamp(1rem, 2vw, 1.8rem);
   }
 }
 
 @media (max-width: 576px) {
   .project {
-    width: calc(100% - 20px); /* Single column on small screens */
+    width: calc(100% - 20px);
   }
+
   #changing-text {
     font-size: clamp(2.5rem, 8vw, 3.5rem);
   }
+
   .additional-text {
     font-size: clamp(0.9rem, 2vw, 1.3rem);
   }
